@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication11
+{
+    class Sco:Add//字符串结果
+    {
+         public override void Adds()
+        {
+            StringResult = Stringnumb1 + Stringnumb2;
+            Console.WriteLine(StringResult.ToString());
+        }
+
+        public override void Subs()
+        {
+            StringResult = Stringnumb1.Replace(Stringnumb2, "");//去掉原字符中Stringnumb2字符
+            Console.WriteLine(StringResult);
+        }
+    }
+
+}

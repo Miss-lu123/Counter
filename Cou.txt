@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+
+namespace ConsoleApplication11
+{
+    class Cou:Add
+    {
+        private int num1;//数1
+        private int num2;//数2
+        private char oper;//运算符
+        public static bool flagbool;
+        public int flagoper;
+        public int Num1
+        {
+            get { return num1; }
+            set { num1 = value; }
+        }
+        public int Num2
+        {
+            get { return num2; }
+            set { num2 = value; }
+        }
+        public char Oper
+        {
+            get { return oper; }
+            set { oper = value; }
+        }
+        public static bool IsNumeric(string value)//判断一个数是否为整数
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            flagbool = Regex.IsMatch(value, @"^[+-]?\d*[.]?\d*$");
+            return flagbool;
+        }
+
+        public void output()
+        {
+            oper = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("请输入一个数字或者字符串：");
+            String input1 = Console.ReadLine();
+            Console.WriteLine("请再输入一个数字或者字符串：");
+            if (IsNumeric(input1))
+            {
+                //执行数字的程序
+                flagoper = 1;
+                Numb1 = Convert.ToInt32(input1);
+                Numb2 = Convert.ToInt32(Console.ReadLine());
+            }
+            else
+            {
+                //执行字符串的程序
+                flagoper = 2;
+                Stringnumb1 = input1;      
+                Stringnumb2 = Console.ReadLine();  
+            }      
+        }     
+        public void Count()
+        {               
+            if (oper == '*')
+            Console.WriteLine(Mul());
+            else if (oper == '/')
+                Console.WriteLine(Div());
+        }
+        public bool Equals(int a, int b)
+        {
+            if (a == b) return true;
+            else return false;
+        }
+        //*&/
+        public double Mul()
+        {
+            return Numb1 * Numb2;
+        }
+
+        public double Div()
+        {
+            return Numb1 / Numb2;
+        }
+
+        public override void Adds()
+        {
+            DoubleResult = Numb1 + Numb2;
+            Console.WriteLine(DoubleResult.ToString());
+        }
+
+        public override void Subs()
+        {
+            DoubleResult = Numb1 - Numb2;
+            Console.WriteLine(DoubleResult.ToString());
+        }
+    }
+}

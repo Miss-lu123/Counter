@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            Console.WriteLine("请输入+ - * / 中任意一个符号：");
+            Cou cou= new Cou();         
+            Sco sc = new Sco();
+            cou.output();          
+            sc.Stringnumb1 = cou.Stringnumb1;
+            sc.Stringnumb2 = cou.Stringnumb2;
+            Console.WriteLine("结果为：");
+            cou.Count();        
+            if (cou.Oper == '+' && cou.flagoper == 1)
+                cou.Adds();
+            if (cou.Oper == '+' && cou.flagoper == 2)
+                sc.Adds();
+
+            if (cou.Oper== '-' && cou.flagoper == 1)
+                cou.Subs();
+            if (cou.Oper == '-' && cou.flagoper == 2)
+            {
+                sc.Subs();
+            }
+            Console.ReadLine();
+        }
+    }
+}

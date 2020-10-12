@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication11
+{
+    abstract class Add
+    {
+       private double _numb1;//数1
+       public double Numb1
+       {
+       get { return _numb1; }
+       set { _numb1 = value; }
+        }
+       private double _numb2;//数2
+       public double Numb2
+       {
+           get { return _numb2; }
+           set { _numb2 = value; }
+       }
+       private String stringnumb1;//字符串1
+
+       public String Stringnumb1
+       {
+           get { return stringnumb1; }
+           set { stringnumb1 = value; }
+       }
+       private String stringnumb2;//字符串2
+       public String Stringnumb2
+       {
+           get { return stringnumb2; }
+           set { stringnumb2 = value; }
+       }
+       private double doubleResult;//数字结果
+       public double DoubleResult
+       {
+           get { return doubleResult; }
+           set { doubleResult = value; }
+       }
+       private String stringResult;//字符串结果
+       public String StringResult
+       {
+           get { return stringResult; }
+           set { stringResult = value; }
+       }
+        public abstract void Adds();//加
+        public abstract void Subs();//减
+    }
+}
+
